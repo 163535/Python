@@ -1,0 +1,253 @@
+3.
+import random
+target_num, guess_num = random.randint(1, 10), 0
+while target_num != guess_num:
+    guess_num = int(input('Guess a number between 1 and 10 until you get it right : '))
+print('Well guessed!') 
+
+
+4.
+n = 5
+for i in range(n):
+    for j in range(i):
+        print('* ', end="")
+    print('')
+for i in range(n, 0, -1):
+    for j in range(i):
+        print('* ', end="")
+    print('') 
+
+
+5.
+word = input("Input a word to reverse: ")
+for char in range(len(word) - 1, -1, -1):
+    print(word[char], end="")
+print("\n")
+ 
+ 
+7.
+datalist = [1452, 11.23, 1+2j, True, 'w3resource', (0, -1), [5, 12], {"class": 'V', "section": 'A'}]
+for item in datalist:
+    print("Type of", item, "is", type(item)) 
+
+
+8.
+for x in range(6):
+    if (x == 3 or x == 6):
+        continue
+    print(x, end=' ')
+print("\n")
+
+	
+9.
+x, y = 0, 1
+while y < 50:
+    print(y)
+    x, y = y, x + y
+
+
+16.
+items = []
+for i in range(100, 401):
+    s = str(i)
+    if (int(s[0]) % 2 == 0) and (int(s[1]) % 2 == 0) and (int(s[2]) % 2 == 0):
+        items.append(s)
+print(",".join(items)) 
+
+
+17.
+result_str = ""
+for row in range(0, 7):
+    for column in range(0, 7):
+        if (((column == 1 or column == 5) and row != 0) or ((row == 0 or row == 3) and (column > 1 and column < 5))):
+            result_str = result_str + "*"
+        else:
+            result_str = result_str + " "
+    result_str = result_str + "\n"
+print(result_str) 
+
+
+27.
+result_str="";    
+for row in range(0,7):    
+    for column in range(0,7):     
+        if (column == 3 or (row == 0 and column > 0 and column <6)):  
+            result_str=result_str+"*"    
+        else:      
+            result_str=result_str+" "    
+    result_str=result_str+"\n"    
+print(result_str)
+
+
+30.
+result_str = ""
+for row in range(0, 7):
+    for column in range(0, 7):
+        if (((row == 0 or row == 6) and column >= 0 and column <= 6) or row + column == 6):
+            result_str = result_str + "*"
+        else:
+            result_str = result_str + " "
+
+    result_str = result_str + "\n"
+print(result_str) 
+
+
+31.
+h_age = int(input("Input a dog's age in human years: "))
+if h_age < 0:
+    print("Age must be a positive number.")
+    exit()
+elif h_age <= 2:
+    d_age = h_age * 10.5
+else:
+    d_age = 21 + (h_age - 2) * 4
+print("The dog's age in dog's years is", d_age) 
+
+
+32.
+l = input("Input a letter of the alphabet: ")
+if l in ('a', 'e', 'i', 'o', 'u'):
+    print("%s is a vowel." % l)
+elif l == 'y':
+    print("Sometimes the letter y stands for a vowel, sometimes for a consonant.")
+else:
+    print("%s is a consonant." % l) 
+
+
+34.
+def sum(x, y):
+    sum = x + y
+    if sum in range(15, 20):
+        return 20
+    else:
+        return sum
+print(sum(10, 6))
+print(sum(10, 2))
+print(sum(10, 12))
+
+
+36.
+print("Input lengths of the triangle sides: ")
+x = int(input("x: "))
+y = int(input("y: "))
+z = int(input("z: "))
+if x == y == z:
+    print("Equilateral triangle")
+elif x == y or y == z or z == x:
+    print("Isosceles triangle")
+else:
+    print("Scalene triangle") 
+
+
+37.
+month = input("Input the month (e.g. January, February etc.): ")
+day = int(input("Input the day: "))
+if month in ('January', 'February', 'March'):
+    season = 'winter'
+elif month in ('April', 'May', 'June'):
+    season = 'spring'
+elif month in ('July', 'August', 'September'):
+    season = 'summer'
+else:
+    season = 'autumn'
+if (month == 'March') and (day > 19):
+    season = 'spring'
+elif (month == 'June') and (day > 20):
+    season = 'summer'
+elif (month == 'September') and (day > 21):
+    season = 'autumn'
+elif (month == 'December') and (day > 20):
+    season = 'winter'
+print("Season is", season) 
+
+
+38.
+day = int(input("Input birthday: "))
+month = input("Input month of birth (e.g. march, july etc): ")
+if month == 'december':
+    astro_sign = 'Sagittarius' if (day < 22) else 'Capricorn'
+elif month == 'january':
+    astro_sign = 'Capricorn' if (day < 20) else 'Aquarius'
+elif month == 'february':
+    astro_sign = 'Aquarius' if (day < 19) else 'Pisces'
+elif month == 'march':
+    astro_sign = 'Pisces' if (day < 21) else 'Aries'
+elif month == 'april':
+    astro_sign = 'Aries' if (day < 20) else 'Taurus'
+elif month == 'may':
+    astro_sign = 'Taurus' if (day < 21) else 'Gemini'
+elif month == 'june':
+    astro_sign = 'Gemini' if (day < 21) else 'Cancer'
+elif month == 'july':
+    astro_sign = 'Cancer' if (day < 23) else 'Leo'
+elif month == 'august':
+    astro_sign = 'Leo' if (day < 23) else 'Virgo'
+elif month == 'september':
+    astro_sign = 'Virgo' if (day < 23) else 'Libra'
+elif month == 'october':
+    astro_sign = 'Libra' if (day < 23) else 'Scorpio'
+elif month == 'november':
+    astro_sign = 'Scorpio' if (day < 22) else 'Sagittarius'
+print("Your Astrological sign is :", astro_sign) 
+
+
+39.
+year = int(input("Input your birth year: "))
+if (year - 2000) % 12 == 0:
+    sign = 'Dragon'
+elif (year - 2000) % 12 == 1:
+    sign = 'Snake'
+elif (year - 2000) % 12 == 2:
+    sign = 'Horse'
+elif (year - 2000) % 12 == 3:
+    sign = 'Sheep'
+elif (year - 2000) % 12 == 4:
+    sign = 'Monkey'
+elif (year - 2000) % 12 == 5:
+    sign = 'Rooster'
+elif (year - 2000) % 12 == 6:
+    sign = 'Dog'
+elif (year - 2000) % 12 == 7:
+    sign = 'Pig'
+elif (year - 2000) % 12 == 8:
+    sign = 'Rat'
+elif (year - 2000) % 12 == 9:
+    sign = 'Ox'
+elif (year - 2000) % 12 == 10:
+    sign = 'Tiger'
+else:
+    sign = 'Hare'
+print("Your Zodiac sign :", sign) 
+
+
+40.
+a = float(input("Input first number: "))
+b = float(input("Input second number: "))
+c = float(input("Input third number: "))
+if a > b:
+    if a < c:
+        median = a
+    elif b > c:
+        median = b
+    else:
+        median = c
+else:
+    if a > c:
+        median = a
+    elif b < c:
+        median = b
+    else:
+        median = c
+print("The median is", median)
+
+
+43.
+n = int(input("Input a number: "))
+for i in range(1, 11):
+    print(n, 'x', i, '=', n * i)
+   
+   
+44.
+for i in range(10):
+    print(str(i) * i)
+

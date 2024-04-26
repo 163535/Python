@@ -1,0 +1,165 @@
+2.
+d = {0: 10, 1: 20}
+print(d)
+d.update({2: 30})
+print(d) 
+
+
+3.
+dic1 = {1: 10, 2: 20}
+dic2 = {3: 30, 4: 40}
+dic3 = {5: 50, 6: 60}
+dic4 = {}
+for d in (dic1, dic2, dic3):
+    dic4.update(d)
+print(dic4) 
+
+
+4.
+d = {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}
+def is_key_present(x):
+    if x in d:
+        print('Key is present in the dictionary')
+    else:
+        print('Key is not present in the dictionary')
+is_key_present(5)
+is_key_present(9) 
+
+
+7.
+d = dict()
+for x in range(1, 16):
+    d[x] = x ** 2
+print(d)
+
+
+8.
+d1 = {'a': 100, 'b': 200}
+d2 = {'x': 300, 'y': 200}
+d = d1.copy()
+d.update(d2)
+print(d) 
+
+
+9.
+d = {'Red': 1, 'Green': 2, 'Blue': 3}
+for color_key, value in d.items():
+    print(color_key, 'corresponds to ', d[color_key]) 
+
+
+10.
+my_dict = {'data1': 100, 'data2': -54, 'data3': 247}
+result = sum(my_dict.values())
+print(result) 
+
+
+11.
+my_dict = {'data1': 100, 'data2': -54, 'data3': 247}
+result = 1
+for key in my_dict:
+    result = result * my_dict[key]
+print(result) 
+
+
+12.
+myDict = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+print(myDict)
+if 'a' in myDict:
+    del myDict['a']
+print(myDict)
+
+
+13.
+keys = ['red', 'green', 'blue']
+values = ['#FF0000', '#008000', '#0000FF']
+color_dictionary = dict(zip(keys, values))
+print(color_dictionary)
+
+
+14.
+color_dict = {
+    'red': '#FF0000',
+    'green': '#008000',
+    'black': '#000000',
+    'white': '#FFFFFF'
+}
+for key in sorted(color_dict):
+    print("%s: %s" % (key, color_dict[key]))
+
+
+16.
+class dictObj(object):
+    def __init__(self):
+        self.x = 'red'
+        self.y = 'Yellow'
+        self.z = 'Green'
+    def do_nothing(self):
+        pass
+test = dictObj()
+print(test.__dict__) 
+
+
+18.
+my_dict = {}
+if not bool(my_dict):
+    print("Dictionary is empty")
+
+
+19.
+from collections import Counter
+d1 = {'a': 100, 'b': 200, 'c': 300}
+d2 = {'a': 300, 'b': 200, 'd': 400}
+d = Counter(d1) + Counter(d2)
+print(d)
+
+
+21.
+import itertools
+d = {'1': ['a', 'b'], '2': ['c', 'd']}
+for combo in itertools.product(*[d[k] for k in sorted(d.keys())]):
+    print(''.join(combo))
+
+
+22.
+from heapq import nlargest
+my_dict = {'a': 500, 'b': 5874, 'c': 560, 'd': 400, 'e': 5874, 'f': 20}
+three_largest = nlargest(3, my_dict, key=my_dict.get)
+print(three_largest)
+
+
+24.
+from collections import defaultdict, Counter
+str1 = 'w3resource'
+my_dict = {}
+for letter in str1:
+    my_dict[letter] = my_dict.get(letter, 0) + 1
+print(my_dict) 
+
+
+25.
+my_dict = {'C1': [1, 2, 3], 'C2': [5, 6, 7], 'C3': [9, 10, 11]}
+for row in zip(*([key] + (value) for key, value in sorted(my_dict.items()))):
+    print(*row)
+
+
+26.
+student = [{'id': 1, 'success': True, 'name': 'Lary'},
+ {'id': 2, 'success': False, 'name': 'Rabi'},
+ {'id': 3, 'success': True, 'name': 'Alex'}]
+print(sum(d['id'] for d in student))
+print(sum(d['success'] for d in student))
+
+
+27.
+num_list = [1, 2, 3, 4]
+new_dict = current = {}
+for name in num_list:
+    current[name] = {}
+    current = current[name]
+print(new_dict)
+
+
+28.
+num = {'n1': [2, 3, 1], 'n2': [5, 1, 2], 'n3': [3, 2, 4]}
+sorted_dict = {x: sorted(y) for x, y in num.items()}
+print(sorted_dict)

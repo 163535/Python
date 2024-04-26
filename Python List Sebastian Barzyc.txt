@@ -1,0 +1,155 @@
+1.
+def sum_list(items):
+    sum_numbers = 0
+    for x in items:
+        sum_numbers += x
+    return sum_numbers
+print(sum_list([1, 2, -8]))
+
+
+2.
+def multiply_list(items):
+    tot = 1
+    for x in items:
+        tot *= x
+    return tot
+print(multiply_list([1, 2, -8]))
+
+
+3.
+def max_num_in_list(list):
+    max = list[0]
+    for a in list:
+        if a > max:
+            max = a
+    return max
+print(max_num_in_list([1, 2, -8, 0]))
+
+
+4.
+def smallest_num_in_list(list):
+    min = list[0]
+    for a in list:
+        if a < min:
+            min = a
+    return min
+print(smallest_num_in_list([1, 2, -8, 0])) 
+
+
+5.
+def match_words(words):
+    ctr = 0
+    for word in words:
+        if len(word) > 1 and word[0] == word[-1]:
+            ctr += 1
+    return ctr
+print(match_words(['abc', 'xyz', 'aba', '1221']))
+
+
+7.
+a = [10, 20, 30, 20, 10, 50, 60, 40, 80, 50, 40]
+dup_items = set()
+uniq_items = []
+for x in a:
+    if x not in dup_items:
+        uniq_items.append(x)
+        dup_items.add(x)
+print(dup_items) 
+
+
+8.
+l = []
+if not l:
+    print("List is empty")
+
+
+9.
+original_list = [10, 22, 44, 23, 4]
+new_list = list(original_list)
+print(original_list)
+print(new_list)
+
+
+10.
+def long_words(n, str):
+    word_len = []
+    txt = str.split(" ")
+    for x in txt:
+        if len(x) > n:
+            word_len.append(x)
+    return word_len
+print(long_words(3, "The quick brown fox jumps over the lazy dog"))
+
+
+11.
+def common_data(list1, list2):
+    result = False
+    for x in list1:
+        for y in list2:
+            if x == y:
+                result = True
+                return result
+print(common_data([1, 2, 3, 4, 5], [5, 6, 7, 8, 9]))
+print(common_data([1, 2, 3, 4, 5], [6, 7, 8, 9])) 
+
+
+12.
+color = ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
+color = [x for (i, x) in enumerate(color) if i not in (0, 4, 5)]
+print(color)
+
+
+13.
+array = [[['*' for col in range(6)] for col in range(4)] for row in range(3)]
+print(array)
+
+
+14.
+num = [7, 8, 120, 25, 44, 20, 27]
+num = [x for x in num if x % 2 != 0]
+print(num)
+
+
+15.
+from random import shuffle
+color = ['Red', 'Green', 'White', 'Black', 'Pink', 'Yellow']
+shuffle(color)
+print(color)
+
+
+16.
+def printValues():
+    l = list()
+    for i in range(1, 21):
+        l.append(i**2)
+    print(l[:5])
+    print(l[-5:])
+printValues()
+
+
+18.
+import itertools
+print(list(itertools.permutations([1, 2, 3])))
+
+
+20.
+nums = [5, 15, 35, 8, 98]
+for num_index, num_val in enumerate(nums):
+    print(num_index, num_val)
+
+
+21
+s = ['a', 'b', 'c', 'd']
+str1 = ''.join(s)
+print(str1)
+
+
+22.
+num = [10, 30, 4, -6]
+print(num.index(30))
+
+
+25.
+import random
+color_list = ['Red', 'Blue', 'Green', 'White', 'Black']
+print(random.choice(color_list))
