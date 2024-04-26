@@ -1,0 +1,187 @@
+3.2 https://www.w3resource.com/python-exercises/dictionary/python-data-type-dictionary-exercise-2.php
+Write a Python program to add a key to a dictionary.
+
+d = {0: 10, 1: 20}
+print(d)
+d.update({2: 30})
+print(d) 
+
+3.3 https://www.w3resource.com/python-exercises/dictionary/python-data-type-dictionary-exercise-3.php
+Write a Python script to concatenate the following dictionaries to create a new one.
+
+dic1 = {1: 10, 2: 20}
+dic2 = {3: 30, 4: 40}
+dic3 = {5: 50, 6: 60}
+dic4 = {}
+for d in (dic1, dic2, dic3):
+    dic4.update(d)
+print(dic4) 
+
+3.4 https://www.w3resource.com/python-exercises/dictionary/python-data-type-dictionary-exercise-4.php
+Write a Python program to check whether a given key already exists in a dictionary.
+
+d = {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}
+def is_key_present(x):
+    if x in d:
+        print('Key is present in the dictionary')
+    else:
+        print('Key is not present in the dictionary')
+is_key_present(5)
+is_key_present(9) 
+
+3.7 https://www.w3resource.com/python-exercises/dictionary/python-data-type-dictionary-exercise-7.php
+Write a Python script to print a dictionary where the keys are numbers between 1 and 15 (both included) and the values are the square of the keys.
+
+d = dict()
+for x in range(1, 16):
+    d[x] = x ** 2
+print(d)
+
+3.8 https://www.w3resource.com/python-exercises/dictionary/python-data-type-dictionary-exercise-8.php
+Write a Python script to merge two Python dictionaries.
+
+d1 = {'a': 100, 'b': 200}
+d2 = {'x': 300, 'y': 200}
+d = d1.copy()
+d.update(d2)
+print(d) 
+
+3.9 https://www.w3resource.com/python-exercises/dictionary/python-data-type-dictionary-exercise-9.php
+Write a Python program to iterate over dictionaries using for loops.
+
+d = {'Red': 1, 'Green': 2, 'Blue': 3}
+for color_key, value in d.items():
+    print(color_key, 'corresponds to ', d[color_key]) 
+
+3.10 https://www.w3resource.com/python-exercises/dictionary/python-data-type-dictionary-exercise-10.php
+Write a Python program to sum all the items in a dictionary.
+
+my_dict = {'data1': 100, 'data2': -54, 'data3': 247}
+result = sum(my_dict.values())
+print(result) 
+
+3.11 https://www.w3resource.com/python-exercises/dictionary/python-data-type-dictionary-exercise-11.php
+Write a Python program to multiply all the items in a dictionary.
+
+my_dict = {'data1': 100, 'data2': -54, 'data3': 247}
+result = 1
+for key in my_dict:
+    result = result * my_dict[key]
+print(result) 
+
+3.12 https://www.w3resource.com/python-exercises/dictionary/python-data-type-dictionary-exercise-12.php
+Write a Python program to remove a key from a dictionary.
+
+myDict = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+print(myDict)
+if 'a' in myDict:
+    del myDict['a']
+print(myDict)
+
+3.13 https://www.w3resource.com/python-exercises/dictionary/python-data-type-dictionary-exercise-13.php
+Write a Python program to map two lists into a dictionary.
+
+keys = ['red', 'green', 'blue']
+values = ['#FF0000', '#008000', '#0000FF']
+color_dictionary = dict(zip(keys, values))
+print(color_dictionary)
+
+3.14 https://www.w3resource.com/python-exercises/dictionary/python-data-type-dictionary-exercise-14.php
+Write a Python program to sort a given dictionary by key
+
+color_dict = {
+    'red': '#FF0000',
+    'green': '#008000',
+    'black': '#000000',
+    'white': '#FFFFFF'
+}
+for key in sorted(color_dict):
+    print("%s: %s" % (key, color_dict[key]))
+
+3.16 https://www.w3resource.com/python-exercises/dictionary/python-data-type-dictionary-exercise-16.php
+Write a Python program to get a dictionary from an object's fields.
+
+class dictObj(object):
+    def __init__(self):
+        self.x = 'red'
+        self.y = 'Yellow'
+        self.z = 'Green'
+    def do_nothing(self):
+        pass
+test = dictObj()
+print(test.__dict__) 
+
+3.18 https://www.w3resource.com/python-exercises/dictionary/python-data-type-dictionary-exercise-18.php
+Write a Python program to check if a dictionary is empty or not.
+
+my_dict = {}
+if not bool(my_dict):
+    print("Dictionary is empty")
+
+3.19 https://www.w3resource.com/python-exercises/dictionary/python-data-type-dictionary-exercise-19.php
+Write a Python program to combine two dictionary by adding values for common keys.
+
+from collections import Counter
+d1 = {'a': 100, 'b': 200, 'c': 300}
+d2 = {'a': 300, 'b': 200, 'd': 400}
+d = Counter(d1) + Counter(d2)
+print(d)
+
+3.21 https://www.w3resource.com/python-exercises/dictionary/python-data-type-dictionary-exercise-21.php
+Write a Python program to create and display all combinations of letters, selecting each letter from a different key in a dictionary.
+
+import itertools
+d = {'1': ['a', 'b'], '2': ['c', 'd']}
+for combo in itertools.product(*[d[k] for k in sorted(d.keys())]):
+    print(''.join(combo))
+
+3.22 https://www.w3resource.com/python-exercises/dictionary/python-data-type-dictionary-exercise-22.php
+Write a Python program to find the highest 3 values of corresponding keys in a dictionary.
+
+from heapq import nlargest
+my_dict = {'a': 500, 'b': 5874, 'c': 560, 'd': 400, 'e': 5874, 'f': 20}
+three_largest = nlargest(3, my_dict, key=my_dict.get)
+print(three_largest)
+
+3.24 https://www.w3resource.com/python-exercises/dictionary/python-data-type-dictionary-exercise-24.php
+Write a Python program to create a dictionary from a string.
+
+from collections import defaultdict, Counter
+str1 = 'w3resource'
+my_dict = {}
+for letter in str1:
+    my_dict[letter] = my_dict.get(letter, 0) + 1
+print(my_dict) 
+
+3.25 https://www.w3resource.com/python-exercises/dictionary/python-data-type-dictionary-exercise-25.php
+Write a Python program to print a dictionary in table format.
+
+my_dict = {'C1': [1, 2, 3], 'C2': [5, 6, 7], 'C3': [9, 10, 11]}
+for row in zip(*([key] + (value) for key, value in sorted(my_dict.items()))):
+    print(*row)
+
+3.26 https://www.w3resource.com/python-exercises/dictionary/python-data-type-dictionary-exercise-26.php
+Write a Python program to count the values associated with a key in a dictionary.
+
+student = [{'id': 1, 'success': True, 'name': 'Lary'},
+ {'id': 2, 'success': False, 'name': 'Rabi'},
+ {'id': 3, 'success': True, 'name': 'Alex'}]
+print(sum(d['id'] for d in student))
+print(sum(d['success'] for d in student))
+
+3.27 https://www.w3resource.com/python-exercises/dictionary/python-data-type-dictionary-exercise-27.php
+Write a Python program to convert a list into a nested dictionary of keys.
+
+num_list = [1, 2, 3, 4]
+new_dict = current = {}
+for name in num_list:
+    current[name] = {}
+    current = current[name]
+print(new_dict)
+
+3.28 https://www.w3resource.com/python-exercises/dictionary/python-data-type-dictionary-exercise-28.php
+Write a Python program to sort a list alphabetically in a dictionary.
+
+num = {'n1': [2, 3, 1], 'n2': [5, 1, 2], 'n3': [3, 2, 4]}
+sorted_dict = {x: sorted(y) for x, y in num.items()}
+print(sorted_dict)

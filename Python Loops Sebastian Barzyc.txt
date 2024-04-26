@@ -1,0 +1,245 @@
+4.3 https://www.w3resource.com/python-exercises/python-conditional-exercise-3.php
+Write a Python program to guess a number between 1 and 9.
+import random
+target_num, guess_num = random.randint(1, 10), 0
+while target_num != guess_num:
+    guess_num = int(input('Guess a number between 1 and 10 until you get it right : '))
+print('Well guessed!') 
+
+4.4 https://www.w3resource.com/python-exercises/python-conditional-exercise-4.php
+Write a Python program to construct the following pattern, using a nested for loop.
+
+n = 5
+for i in range(n):
+    for j in range(i):
+        print('* ', end="")
+    print('')
+for i in range(n, 0, -1):
+    for j in range(i):
+        print('* ', end="")
+    print('') 
+	
+4.5 https://www.w3resource.com/python-exercises/python-conditional-exercise-5.php
+Write a Python program that accepts a word from the user and reverses it.
+
+word = input("Input a word to reverse: ")
+for char in range(len(word) - 1, -1, -1):
+    print(word[char], end="")
+print("\n")
+ 
+4.7 https://www.w3resource.com/python-exercises/python-conditional-exercise-7.php
+Write a Python program that prints each item and its corresponding type from the following list.
+
+datalist = [1452, 11.23, 1+2j, True, 'w3resource', (0, -1), [5, 12], {"class": 'V', "section": 'A'}]
+for item in datalist:
+    print("Type of", item, "is", type(item)) 
+
+4.8 https://www.w3resource.com/python-exercises/python-conditional-exercise-8.php
+Write a Python program that prints all the numbers from 0 to 6 except 3 and 6.
+
+for x in range(6):
+    if (x == 3 or x == 6):
+        continue
+    print(x, end=' ')
+print("\n")
+	
+4.9 https://www.w3resource.com/python-exercises/python-conditional-exercise-9.php
+Write a Python program to get the Fibonacci series between 0 and 50.
+
+x, y = 0, 1
+while y < 50:
+    print(y)
+    x, y = y, x + y
+
+4.12 https://www.w3resource.com/python-exercises/python-conditional-exercise-12.php
+Write a Python program that accepts a sequence of lines (blank line to terminate) as input and prints the lines as output (all characters in lower case).
+
+lines = []
+while True:
+    l = input()
+    if l:
+        lines.append(l.upper())
+    else:
+        break;
+for l in lines:
+    print(l) 
+
+4.13 https://www.w3resource.com/python-exercises/python-conditional-exercise-13.php
+Write a Python program that accepts a sequence of comma separated 4 digit binary numbers as its input. The program will print the numbers that are divisible by 5 in a comma separated sequence.
+
+items = []
+num = [x for x in input().split(',')]
+for p in num:
+    x = int(p, 2)
+    if not x % 5:
+        items.append(p)
+print(','.join(items))
+
+4.16 https://www.w3resource.com/python-exercises/python-conditional-exercise-16.php
+Write a Python program to find numbers between 100 and 400 (both included) where each digit of a number is an even number. The numbers obtained should be printed in a comma-separated sequence.
+
+items = []
+for i in range(100, 401):
+    s = str(i)
+    if (int(s[0]) % 2 == 0) and (int(s[1]) % 2 == 0) and (int(s[2]) % 2 == 0):
+        items.append(s)
+print(",".join(items)) 
+
+4.17 https://www.w3resource.com/python-exercises/python-conditional-exercise-17.php
+Write a Python program to print the alphabet pattern 'A'.
+  
+result_str = ""
+for row in range(0, 7):
+    for column in range(0, 7):
+        if (((column == 1 or column == 5) and row != 0) or ((row == 0 or row == 3) and (column > 1 and column < 5))):
+            result_str = result_str + "*"
+        else:
+            result_str = result_str + " "
+    result_str = result_str + "\n"
+print(result_str) 
+
+4.27 https://www.w3resource.com/python-exercises/python-conditional-exercise-27.php
+Write a Python program to print the alphabet pattern 'T'.
+
+result_str="";    
+for row in range(0,7):    
+    for column in range(0,7):     
+        if (column == 3 or (row == 0 and column > 0 and column <6)):  
+            result_str=result_str+"*"    
+        else:      
+            result_str=result_str+" "    
+    result_str=result_str+"\n"    
+print(result_str);
+
+4.30 https://www.w3resource.com/python-exercises/python-conditional-exercise-30.php
+Write a Python program to print the alphabet pattern 'Z'.
+
+result_str = ""
+for row in range(0, 7):
+    for column in range(0, 7):
+        if (((row == 0 or row == 6) and column >= 0 and column <= 6) or row + column == 6):
+            result_str = result_str + "*"
+        else:
+            result_str = result_str + " "
+
+    result_str = result_str + "\n"
+print(result_str) 
+
+
+4.31 https://www.w3resource.com/python-exercises/python-conditional-exercise-31.php
+Write a Python program to calculate a dog's age in dog years.
+
+h_age = int(input("Input a dog's age in human years: "))
+if h_age < 0:
+    print("Age must be a positive number.")
+    exit()
+elif h_age <= 2:
+    d_age = h_age * 10.5
+else:
+    d_age = 21 + (h_age - 2) * 4
+print("The dog's age in dog's years is", d_age) 
+
+4.32 https://www.w3resource.com/python-exercises/python-conditional-exercise-32.php
+Write a Python program to check whether an alphabet is a vowel or consonant.
+
+l = input("Input a letter of the alphabet: ")
+if l in ('a', 'e', 'i', 'o', 'u'):
+    print("%s is a vowel." % l)  # Display a message stating that the input letter is a vowel
+elif l == 'y':
+    print("Sometimes the letter y stands for a vowel, sometimes for a consonant.")
+else:
+    print("%s is a consonant." % l) 
+
+4.34 https://www.w3resource.com/python-exercises/python-conditional-exercise-34.php
+Write a Python program to sum two integers. However, if the sum is between 15 and 20 it will return 20.
+
+def sum(x, y):
+    sum = x + y
+    if sum in range(15, 20):
+        return 20  # If the sum falls within the specified range, return 20
+    else:
+        return sum
+print(sum(10, 6))
+print(sum(10, 2))
+print(sum(10, 12))
+
+4.36 https://www.w3resource.com/python-exercises/python-conditional-exercise-36.php
+Write a Python program to check if a triangle is equilateral, isosceles or scalene.
+
+print("Input lengths of the triangle sides: ")
+x = int(input("x: "))
+y = int(input("y: "))
+z = int(input("z: "))
+if x == y == z:
+    print("Equilateral triangle")
+elif x == y or y == z or z == x:
+    print("Isosceles triangle")
+else:
+    print("Scalene triangle") 
+
+
+4.39 https://www.w3resource.com/python-exercises/python-conditional-exercise-39.php
+Write a Python program to display the sign of the Chinese Zodiac for the given year in which you were born.
+
+year = int(input("Input your birth year: "))
+if (year - 2000) % 12 == 0:
+    sign = 'Dragon'
+elif (year - 2000) % 12 == 1:
+    sign = 'Snake'
+elif (year - 2000) % 12 == 2:
+    sign = 'Horse'
+elif (year - 2000) % 12 == 3:
+    sign = 'Sheep'
+elif (year - 2000) % 12 == 4:
+    sign = 'Monkey'
+elif (year - 2000) % 12 == 5:
+    sign = 'Rooster'
+elif (year - 2000) % 12 == 6:
+    sign = 'Dog'
+elif (year - 2000) % 12 == 7:
+    sign = 'Pig'
+elif (year - 2000) % 12 == 8:
+    sign = 'Rat'
+elif (year - 2000) % 12 == 9:
+    sign = 'Ox'
+elif (year - 2000) % 12 == 10:
+    sign = 'Tiger'
+else:
+    sign = 'Hare'
+print("Your Zodiac sign :", sign) 
+
+4.40 https://www.w3resource.com/python-exercises/python-conditional-exercise-40.php
+Write a Python program to find the median of three values.
+
+a = float(input("Input first number: "))
+b = float(input("Input second number: "))
+c = float(input("Input third number: "))
+if a > b:
+    if a < c:
+        median = a
+    elif b > c:
+        median = b
+    else:
+        median = c
+else:
+    if a > c:
+        median = a
+    elif b < c:
+        median = b
+    else:
+        median = c
+print("The median is", median)
+
+4.43 https://www.w3resource.com/python-exercises/python-conditional-exercise-43.php
+Write a Python program to create the multiplication table (from 1 to 10) of a number.
+
+n = int(input("Input a number: "))
+for i in range(1, 11):
+    print(n, 'x', i, '=', n * i)
+   
+4.44 https://www.w3resource.com/python-exercises/python-conditional-exercise-44.php
+Write a Python program to construct the following pattern, using a nested loop number.
+
+for i in range(10):
+    print(str(i) * i)
+
